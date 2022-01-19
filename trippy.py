@@ -72,7 +72,6 @@ def paletteCycling(filename, colornumber):
             image = imageio.imread(newfilename.split('.')[0] + f'-{i}.png')
             writer.append_data(image)
 
-#paletteCycling("martinyop.png",16)
 
 def horizontalOscillation(filename, interval, distorsion, iter): # intervalo normal 0.012, distorsion 10 es piola 256 es brigido, iter 256 si quiero el largo, 90 para loop para img de 256x256
     map, color_table, color_table_val = getPalette(filename, 256)
@@ -142,10 +141,6 @@ def verticalOscillation(filename, interval, distorsion, iter): # intervalo norma
             image = imageio.imread(newfilename.split('.')[0] + f'-{i}.png')
             writer.append_data(image)
 
-#verticalOscillation("vacacionebase.png", 0.012, 10, 256)
-
-# horizontalOscillation("martinyop.png",0.012,40,66)
-
 def randomizeHorizontal(filename, iter, seed):
     map, color_table, color_table_val = getPalette(filename, 256)
     random.seed(seed)
@@ -205,5 +200,3 @@ def randomizeVertical(filename, iter, seed):
         for i in tqdm(range(256)):
             image = imageio.imread(newfilename.split('.')[0] + f'-{iter}-{i}.png')
             writer.append_data(image)
-
-randomizeHorizontal("base.png", 256, 69)
